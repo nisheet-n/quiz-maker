@@ -1,0 +1,42 @@
+{% extends "quizapp/base.html" %}
+{%block title%}
+
+Coorect Answers
+
+{%endblock%}
+
+{%block content%}
+
+<br>
+<div class="container">
+	<h1 class="text-center">Correct Answers</h1>
+	<br>
+
+	<table class="table table-striped table-dark">
+		<thead>
+			<tr>
+				<th style="border-right: 1.5px solid white;">Question</th>
+				<th>Option A</th>
+				<th>Option B</th>
+				<th>Option C</th>
+				<th>Option D</th>
+				<th style="background-color: green; border-left: 1.5px solid green;">Correct Answer</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for question in questionData %}
+			<tr>
+				<td style="border-right: 1.5px solid white;">{{ question.question }}</td>
+				<td>{{ question.optiona }}</td>
+				<td>{{ question.optionb }}</td>
+				<td>{{ question.optionc }}</td>
+				<td>{{ question.optiond }}</td>
+				<td style="border-left: 1.5px solid green;">{{ question.answer }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+{%endblock%}

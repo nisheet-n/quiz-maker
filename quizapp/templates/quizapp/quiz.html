@@ -1,0 +1,64 @@
+{% extends "quizapp/base.html" %}
+{%block title%}
+
+Home page
+
+{%endblock%}
+
+{%block content%}
+
+<div class="container">
+	<h1 class="text-center">Your Quiz</h1>
+	<br>
+	<form action="/result/" method="post">
+
+		{% for que in ques %}
+		<div class="row">
+			<div class="col-md-10">
+				<h3>{{ forloop.counter }}) {{ que.question }}</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<h4>
+					<input type="radio" name="{{ que.id }}" value="{{ que.optiona }}">
+					{{ que.optiona }}
+				</h4>
+			</div>
+			<div class="col-md-3">
+				<h4>
+					<input type="radio" name="{{ que.id }}" value="{{ que.optionb }}">
+					{{ que.optionb }}
+				</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<h4>
+					<input type="radio" name="{{ que.id }}" value="{{ que.optionc }}">
+					{{ que.optionc }}
+				</h4>
+			</div>
+			<div class="col-md-3">
+				<h4>
+					<input class="form_control" type="radio" name="{{ que.id }}" value="{{ que.optiond }}">
+					{{ que.optiond }}
+				</h4>
+			</div>
+		</div>
+		<br>
+		{% endfor %}
+
+		{% csrf_token %}
+		<br>
+
+		<div class="col-3 container text-center">
+			<button type="submit" class="btn btn-lg btn-block btn-success">Check Result</button>
+		</div>
+
+	</form>
+</div>
+
+{%endblock%}

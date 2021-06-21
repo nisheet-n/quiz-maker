@@ -1,0 +1,58 @@
+{% extends "quizapp/base.html" %}
+{%block title%}
+
+Home page
+
+{%endblock%}
+
+{%block content%}
+
+<br>
+<div class="container text-center">
+	<h1>Quiz App</h1>
+	<br>
+
+	<div class="container">
+		<br>
+		<div class="d-grid gap-3 col-5 mx-auto">
+			<a role="button" class="btn btn-primary btn-lg" href="/quiz">
+				My Quiz
+			</a>
+			<a role="button" class="btn btn-info btn-lg" href="/show">
+				Show Answers
+			</a>
+			<a role="button" class="btn btn-success btn-lg" href="/create">
+				Create Quiz
+			</a>
+			<br>
+			<a role="button" class="btn btn-dark btn-lg" href="/about">
+				About
+			</a>
+			<a role="button" class="btn btn-dark btn-lg" href="/admin" target="_blank">
+				Django Admin
+			</a>
+		</div>
+	</div>
+	<br>
+	<hr style="color: white;">
+	<div class="container">
+		<h4>Share With Your Friends</h4>
+		<br>
+		<div class="d-grid gap-2 d-md-block">
+			<a href="http://facebook.com" target="_blank">
+				<button type="button" class="btn btn-outline-dark" style="color: white;">FaceBook</button>
+			</a>
+
+			<a href="http://instagram.com" target="_blank">
+				<button type="button" class="btn btn-outline-dark" style="color: white;">Instagram</button>
+			</a>
+
+			<a href="http://twitter.com" target="_blank">
+				<button type="button" class="btn btn-outline-dark" style="color: white;">Twitter</button>
+			</a>
+
+		</div>
+	</div>
+</div>
+
+{%endblock%}

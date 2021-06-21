@@ -1,0 +1,71 @@
+{% extends "quizapp/base.html" %}
+
+{%block title%}
+
+Create Quiz
+
+{%endblock%}
+
+
+{%block content%}
+
+<div class="container">
+	<br>
+	<h1 class=" text-center">Create A Quiz</h1>
+	<br><br>
+
+	<form method="POST" class="post-form row g-3 container" action="/create/">
+		{% csrf_token %}
+
+		<div class="col-12" style="color: white;">
+			<label for="inputQuestion" class="form-label"><strong>Question</strong></label>
+			<br>
+			{{ form.question }}
+		</div>
+		<div></div>
+		<hr>
+
+		<div class="col-md-4" style="color: white;">
+			<label for="inputOpta" class="form-label">Option A</label>
+			<br>
+			{{ form.optiona }}
+		</div>
+
+		<div class="col-md-8" style="color: white;">
+			<label for="inputOptb" class="form-label">Option B</label>
+			<br>
+			{{ form.optionb }}
+		</div>
+
+		<div class="col-md-4" style="color: white;">
+			<label for="inputOptc" class="form-label">Option C</label>
+			<br>
+			{{ form.optionc }}
+		</div>
+
+		<div class="col-md-8" style="color: white;">
+			<label for="inputOptd" class="form-label">Option D</label>
+			<br>
+			{{ form.optiond }}
+		</div>
+
+
+		<div></div>
+		<hr>
+		<div class="col-12" style="color: white;">
+			<label for="inputAnswer" class="form-label"><strong>Solution</strong></label>
+			<br>
+			{{ form.answer }}
+		</div>
+
+		<br>
+		<hr>
+
+		<div class="col-12 text-center">
+			<button type="submit" class="btn btn-lg btn-primary">Create</button>
+		</div>
+	</form>
+	<br>
+</div>
+
+{%endblock%}
