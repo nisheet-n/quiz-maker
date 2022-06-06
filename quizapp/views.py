@@ -63,6 +63,3 @@ def result(request):
 		'quizapp/result.html',
 		{'score':score,
 		'total':total})
-
-def about(request):
-	return render(request,'quizapp/about.html')
